@@ -23,14 +23,13 @@ alert("Recuerde que tiene 6 y 12 cuotas sin interes")
 
 let cantidadCuotas = parseInt(prompt("Elija la cantidad de cuotas"));
 
-
 function calcularCuotas(){
   if(cantidadCuotas == 1 ||  cantidadCuotas == 6 ||  cantidadCuotas == 12){
     let cuotasSinInteres = ( montoTotal / cantidadCuotas);
     cuotasSinInteresM = cuotasSinInteres.toFixed(2)
     document.write("<h5>Tu monto a pagar por mes $ "+cuotasSinInteresM+" sin interes</h5>")
   } else{
-    let cuotas = (montoTotal / cantidadCuotas) * 0.05;
+    let cuotas = (montoTotal / cantidadCuotas) * 1.05;
     cuotasM = cuotas.toFixed(2)
     document.write("<h5> tu monto a pagar por mes $ "+cuotasM+"</h5>");
   }
