@@ -92,12 +92,18 @@ const arrayIndum = [
    remeraWhite,
 ];
 
+alert("Estos son nuestros productos en stock");
 arrayIndum.forEach((element)=> {
 alert(`${element.nombre} precio: $ ${element.precio} talles: ${element.talles} colores:  ${element.colores}`)
 })
 
-let stockUser = prompt("ingrese un numero del 1 al 10")
-let stockMin = arrayIndum.filter((element)=> { element.stock <= stockUser});
+let stockUser = parseInt(prompt("Ingrese un numero del 1 al 10"));
+if (stockUser < 5){
+  alert("No hay prendas sin stock")
+}
+console.log(stockUser);
+
+let stockMin = arrayIndum.filter((element)=> element.stock <= stockUser);
 stockMin.forEach((element) => alert(`Estos son los productos a comprar nuevamente: ${element.nombre}`));
 
 let sinStock = arrayIndum.filter((element) => element.stock == 0);
@@ -106,8 +112,9 @@ console.log(sinStock);
 arrayIndum.sort((a,b) => a.precio - b.precio);
 console.log(arrayIndum);
 
-/*
+alert("Precios ordenados de menor a mayor")
+
 arrayIndum.forEach((element)=> {
 alert(`${element.nombre} precio: $ ${element.precio} talles: ${element.talles} colores:  ${element.colores}`)
 })
-*/
+
