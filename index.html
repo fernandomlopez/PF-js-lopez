@@ -4,11 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="index.js"></script>
-    <title>Proyecto web</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Milo Indum</title>
 </head>
 <body>
-    <h1>Segunda pre entrega</h1>
- 
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <h3 class="marca">Milo Indum</h3>  
+            <div class="collapse navbar-collapse barra-propia" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#carrito-contain">Carrito</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Productos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#indumProductos">Camperas</a></li>
+                            <li><a class="dropdown-item" href="#indumProductos">Buzos</a></li>
+                            <li><a class="dropdown-item" href="#indumProductos">Pantalones</a></li>
+                            <li><a class="dropdown-item" href="#indumProductos">Remeras</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="..." aria-label="Search" id="buscar">
+                    <button class="btn btn-outline-success" type="submit" id="btn-buscar" onclick="prodBuscado()">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <section class="hero">
+        <h1 class="d-flex justify-content-center">Vestite con estilo</h1>
+    </section>
+    <div class="container-fluid banner-filtros">
+
+    </div>
+    <div id="indumProductos"></div>  
+    <div>
+        <h4>Carrito</h4>
+        <div id="carrito-contain">
+        </div>
+        <p class="precioprod">Precio total: $<span id="precioTotal">0</span></p>
+    </div>
+    <script src="./indexnuevo.js"></script>
 </body>
 </html>

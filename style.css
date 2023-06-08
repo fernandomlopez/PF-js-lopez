@@ -1,0 +1,127 @@
+body {
+    margin: 0px;
+}
+
+.top-header {
+    height: 95px;
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+}
+
+.marca {
+    font-family: 'Staatliches';
+    font-size: 2.2em;
+    padding: 15px;
+    margin: 0px;
+    color: black;
+}
+
+
+.barra-propia ul {
+    margin: auto;
+    align-items: center;
+}
+
+.barra-propia a {
+    font-size: 1.2em;
+}
+
+
+.hero {
+    height: 100vh;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/hero.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: 3em;
+    color: white;
+    font-family: 'Franklin Gothic Medium';
+    margin-left: 90px;
+}
+
+.banner-filtros{
+    height: 95px;
+    width: 100%;
+}
+
+#indumProductos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.carta {
+    margin: 5px;
+}
+
+.img-css {
+    height: 286px;
+    width: 286px;
+}
+
+.nombreProd {
+    font-family: "sans serif";
+}
+
+#carrito-contain {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+h4,
+.precioprod {
+    font-size: 2em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.prodEnCarrito {
+    border: 1px outset;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+}
+
+p {
+    font-size: 1em;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.btn {
+    width: 90%;
+    border: none;
+    outline: 0;
+    color: white;
+    background-color: black;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: white;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(29, 28, 28);
+    box-shadow: 2px 2px 4px black;
+}
+
+.btn-css {
+    height: 10px !important;
+    width: 10px !important;
+    background-color: red;
+}

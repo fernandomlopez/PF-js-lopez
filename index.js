@@ -48,63 +48,9 @@ function calcularCuotas(){
 }
 calcularCuotas();
 
-class Indumentaria {
-   constructor(id, nombre, precio, talles, colores, categoria) {
-      this.id = id;
-      this.nombre = nombre;
-      this.precio = parseFloat(precio);
-      this.talles = talles;
-      this.colores = colores;
-      this.categoria = categoria;
-      this.stock = 5;
-   }
-   restaStock() {
-      alert(`Sumaste ${this.nombre} a tu carrito`);
-      this.stock = this.stock - 1;
-      }
-   sumarIva() {
-      return this.precio * 1.21;
-   }
-   precioSugerido() {
-      return this.precio * 1.21 * 1.25;
-   }
-}
-
-const camperaDeJean = new Indumentaria(1, "Campera de jean", 15000, "S, M, L, XL", "Jean, Negro", "camperas");
-const camperaCuero = new Indumentaria(2, "Campera de cuero", 25000, "S, M, L, XL", "Negro", "camperas");
-const pantalonJean = new Indumentaria(3, "Pantalon de jean", 10516, "38, 40, 42, 44", "Jean, Negro", "pantalones");
-const pantalonJoggerMom = new Indumentaria(4, "Pantalon Jogger MOM", 8200, "38, 40, 42, 44", "Black, Beige", "pantalones");
-const remeraDark = new Indumentaria(5, "Remera Dark Oversize", 7500, "S, M, L, XL", "Negro", "remeras");
-const remeraWhite = new Indumentaria(6, "Remera White Oversize", 7500, "S, M, L, XL", "Blanco", "remeras");
-const buzoOversize = new Indumentaria(7, "Buzo oversize", 8400, "S, M, L, XL", "Negro, Gris, Azul, Naranja, Rojo, Beige", "remeras");
-const buzoCanguro = new Indumentaria(8, "Buzo Canguro", 8800, "S, M, L, XL", "Negro, Gris, Azul, Naranja, Rojo, Beige", "remeras");
-
-const arrayIndum = [
-   camperaDeJean, 
-   camperaCuero, 
-   buzoOversize, 
-   buzoCanguro, 
-   pantalonJean, 
-   pantalonJoggerMom, 
-   remeraDark, 
-   remeraWhite,
-];
-
-//mmostramos en pantalla los productos que tenemos en stock
-alert("Estos son nuestros productos en stock");
-arrayIndum.forEach(e => {
-   alert(`- ${e.nombre}: \n* Precio: $ ${e.precio} \n* Talles: ${e.talles}\n* Colores: ${e.colores}`) 
-})
-
-//le pedimos al usuario un numero para poder checkear el stock disponible
-let stockUser = parseInt(prompt("Ingrese un numero del 1 al 10"));
-if (stockUser < 5){
-  alert("No hay prendas sin stock")
-}
-console.log(`Numero ingresado por el usuario ${stockUser}`);
 
 // filtramos las prendas con poco stock oara mostrarlo en pantalla // POCO STOCK
-let stockMin = arrayIndum.filter((element)=> element.stock <= stockUser);
+let stockMin = arrayIndum.filter((element)=> element.stock <= 3);
 stockMin.forEach((element) => alert(`Estos son los productos a comprar nuevamente:\n ${element.nombre}`));
 
 // productos sin stock
@@ -119,16 +65,16 @@ console.table(arrayIndum);
 alert("Precios ordenados de menor a mayor")
 
 arrayIndum.forEach((e)=> {
-  alert(`- ${e.nombre}: \n- Precio: $ ${e.precio} \n- Talles: ${e.talles}\n- Colores: ${e.colores}`)  
+  alert(`- ${e.nombre}: \n- Precio: $ ${e.precio} \n- Talles: ${e.talles}`)  
 })
 
 //buscar por nombre del producto
-let productoBuscado = prompt("Ingrese el nombre del producto a buscar");
 
-console.log(productoBuscado);
 const productoEncontrado = arrayIndum.filter((e) => e.nombre.toLowerCase() == productoBuscado);
 productoEncontrado.forEach((e) => {
   alert(`Resultado para la busqueda " ${productoBuscado} " :\n
-  - ${e.nombre}: \n- Precio: $ ${e.precio} \n- Talles: ${e.talles}\n- Colores: ${e.colores} `)
+  - ${e.nombre}: \n- Precio: $ ${e.precio} \n- Talles: ${e.talles} `)
 })
 console.log(productoEncontrado);
+
+
