@@ -46,9 +46,16 @@ const carritoContenedor = document.getElementById("carrito-contain")
 const precioTotal = document.getElementById("precioTotal")
 
 
-const prodBuscado = () => {
-   let buscar = document.getElementById("buscar").value
-   const prodEncontrado = arrayIndum.filter((e) => e.nombre.toLowerCase() == buscar);
+const prodBuscado = (e) => {
+   e.preventDefault()
+   indumProductos.innerHTML = ""
+   let buscar = document.getElementById("buscar")
+   let valor = buscar.value
+   console.log(valor)
+   const prodEncontrado = arrayIndum.filter((producto) => {
+      return producto.nombre.toLowerCase().includes(valor.toLowerCase());
+   });
+   console.log(prodEncontrado)
    prodEncontrado.forEach(( e => { 
   
       let divCard = document.createElement("div")
@@ -75,6 +82,10 @@ const prodBuscado = () => {
       })
  }))
 }
+const formBusqueda = document.getElementById("formBusqueda")
+formBusqueda.addEventListener("submit", (e) =>{
+   prodBuscado(e)
+})
 
 // recorremos el array y creamos una card por cada producto
 const renderizar = () => {
@@ -106,8 +117,6 @@ const renderizar = () => {
 }))
 }
 renderizar();
-
-
 
 // creamos un array vacio para el carrito
 let carrito = [];
