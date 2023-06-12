@@ -2,13 +2,6 @@ body {
     margin: 0px;
 }
 
-.top-header {
-    height: 95px;
-    width: 100%;
-    position: absolute;
-    z-index: 5;
-}
-
 .marca {
     font-family: 'Staatliches';
     font-size: 2.2em;
@@ -16,7 +9,6 @@ body {
     margin: 0px;
     color: black;
 }
-
 
 .barra-propia ul {
     margin: auto;
@@ -27,6 +19,10 @@ body {
     font-size: 1.2em;
 }
 
+.icono-css {
+    font-size: 2em !important;
+    margin: 0.5em;
+}
 
 .hero {
     height: 100vh;
@@ -48,24 +44,31 @@ h1 {
     margin-left: 90px;
 }
 
-.banner-filtros{
-    height: 95px;
+.banner-filtros {
+    height: 100px;
     width: 100%;
+    box-shadow: -3px 3px 6px #838385,
+        3px -3px 6px #8c8c8f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #indumProductos {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .carta {
     margin: 5px;
+    box-shadow: -2px 2px 4px #d4d0d0,
+        2px -2px 4px #dbd7d7;
 }
 
 .img-css {
     height: 286px;
-    width: 286px;
 }
 
 .nombreProd {
@@ -79,27 +82,25 @@ h1 {
     justify-content: space-around;
 }
 
-h4,
-.precioprod {
-    font-size: 2em;
-    align-items: center;
+.prodEnCarrito {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.prodEnCarrito {
-    border: 1px outset;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 5px;
+.precioProdContenedor,
+.titulo-carrito {
+    font-size: 1.2em;
+    font-family: sans-serif;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 p {
     font-size: 1em;
     margin: 0px;
     padding: 0px;
-
+    align-self: center;
 }
 
 .btn {
@@ -120,8 +121,61 @@ p {
     box-shadow: 2px 2px 4px black;
 }
 
-.btn-css {
-    height: 10px !important;
-    width: 10px !important;
-    background-color: red;
+footer {
+    height: 250px;
+    margin: 0px;
+    margin-top: 50px;
+    padding: 2rem 8%;
+    color: rgb(254, 254, 254);
+    background-color: rgb(32, 32, 32);
+    box-shadow: -3px 3px 6px #838385,
+                 3px -3px 6px #8c8c8f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.social-icons-contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center !important;
+}
+ .social-icon {
+    background-position: center;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    margin: 1em;
+  }
+
+  .bi-instagram, 
+  .bi-whatsapp,
+  .bi-facebook {
+    font-size: 2em;
+    color: rgb(97, 164, 184);
+  }
+
+  .footer-menu-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    color: rgb(254, 254, 254);
+    font-size: 18px;
+  } 
+
+.menu-item {
+    margin: 1rem 1.5rem;
+    cursor: pointer;
+    opacity: 0.6;
+  }
+
+.copyright {
+    color: rgb(254, 254, 254);
+    opacity: 0.3;
+    text-align: center;
+  }
+
