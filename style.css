@@ -38,10 +38,10 @@ body {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     color: white;
     font-family: 'Franklin Gothic Medium';
-    margin-left: 90px;
+    margin-left: 70px;
 }
 
 .banner-filtros {
@@ -76,7 +76,6 @@ h1 {
 }
 
 #carrito-contain {
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -129,7 +128,7 @@ footer {
     color: rgb(254, 254, 254);
     background-color: rgb(32, 32, 32);
     box-shadow: -3px 3px 6px #838385,
-                 3px -3px 6px #8c8c8f;
+        3px -3px 6px #8c8c8f;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -142,21 +141,21 @@ footer {
     justify-content: center;
     align-items: center;
 }
- .social-icon {
+
+.social-icon {
     background-position: center;
-    background-size: 40%;
     background-repeat: no-repeat;
     margin: 1em;
-  }
+}
 
-  .bi-instagram, 
-  .bi-whatsapp,
-  .bi-facebook {
+.bi-instagram,
+.bi-whatsapp,
+.bi-facebook {
     font-size: 1.7em;
     color: rgb(97, 164, 184);
-  }
+}
 
-  .footer-menu-container {
+.footer-menu-container {
     padding: 0px;
     display: flex;
     flex-direction: row;
@@ -166,17 +165,35 @@ footer {
     list-style-type: none;
     color: rgb(254, 254, 254);
     font-size: 18px;
-  } 
+}
 
 .menu-item {
     margin: 0.8rem 1.2rem;
     cursor: pointer;
     opacity: 0.6;
-  }
+}
 
 .copyright {
     color: rgb(254, 254, 254);
     opacity: 0.3;
     text-align: center;
-  }
+}
 
+
+@media (max-width:768px) {
+    h1 {
+        font-size: 2.2em;
+        margin: auto;
+        align-items: center;
+    }
+
+    .copyright {
+        font-size: 0.9em;
+    }
+
+    .banner-filtros{
+      padding: 0px;
+      font-size: 0.6em;
+      flex-direction: row;   
+    }
+}
