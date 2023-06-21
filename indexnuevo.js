@@ -7,10 +7,11 @@ class Indumentaria {
       this.precio = parseFloat(precio);
       this.talles = talles;
       this.categoria = categoria;
-      this.stock = 5;
+      this.stock = 25;
+      this.cantidad = 1;
    }
    restaStock() {
-      this.stock = this.stock - 1;
+      this.stock = this.stock - this.cantidad;
    }
    sumarIva() {
       return this.precio * 1.21;
@@ -47,6 +48,7 @@ const precioTotal = document.getElementById("precioTotal")
 const contadorCarrito = document.getElementById("contadorCarrito")
 
 // recorremos el array y creamos una card por cada producto
+
 const renderizar = () => {
    arrayIndum.forEach((e => {
       let divCard = document.createElement("div")
@@ -81,16 +83,16 @@ const renderizar = () => {
          agregarAlCarrito(e.id)
          Swal.fire({
             position: 'bottom-end',
-            showCancelButton:false,
+            showCancelButton: false,
             showClass: {
                popup: 'animate__animated animate__fadeInDown'
-             },
-             hideClass: {
+            },
+            hideClass: {
                popup: 'animate__animated animate__fadeOutUp'
-             },
+            },
             icon: 'success',
             html:
-            `Agregaste <b>${e.nombre}</b> al carrito`, 
+               `Agregaste <b>${e.nombre}</b> al carrito`,
             showConfirmButton: false,
             timer: 3000
          })
@@ -116,7 +118,14 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
 const agregarAlCarrito = (indumId) => {
    const item = arrayIndum.find((indum) => indum.id === indumId)
-   carrito.push(item)
+   const repeat = carrito.some((indum) => indum.id === indumId)
+   if (repeat) {
+      const index = carrito.findIndex((indum) => indum.id === indumId)
+      carrito[index].cantidad++
+   } else {
+      const newItem = {...item, cantidad: 1} 
+      carrito.push(newItem)
+   }
    actCarrito()
 }
 
@@ -141,6 +150,7 @@ const actCarrito = () => {
       div.innerHTML = `
       <p>${prod.nombre}</p>
       <p>Precio: $${prod.precio}</p>
+      <p>Cantidad: ${prod.cantidad}</p>
       <button value="X" onclick = "eliminarDelCarrito (${prod.id})"><i class="bi bi-trash"></i></button>
       `
 
@@ -195,16 +205,16 @@ const prodBuscado = (e) => {
          agregarAlCarrito(e.id)
          Swal.fire({
             position: 'bottom-end',
-            showCancelButton:false,
+            showCancelButton: false,
             showClass: {
                popup: 'animate__animated animate__fadeInDown'
-             },
-             hideClass: {
+            },
+            hideClass: {
                popup: 'animate__animated animate__fadeOutUp'
-             },
+            },
             icon: 'success',
             html:
-            `Agregaste <b>${e.nombre}</b> al carrito`,
+               `Agregaste <b>${e.nombre}</b> al carrito`,
             showConfirmButton: false,
             timer: 3000,
          })
@@ -252,16 +262,16 @@ const filtrarCategorias = (categoria) => {
          agregarAlCarrito(e.id)
          Swal.fire({
             position: 'bottom-end',
-            showCancelButton:false,
+            showCancelButton: false,
             showClass: {
                popup: 'animate__animated animate__fadeInDown'
-             },
-             hideClass: {
+            },
+            hideClass: {
                popup: 'animate__animated animate__fadeOutUp'
-             },
+            },
             icon: 'success',
             html:
-            `Agregaste <b>${e.nombre}</b> al carrito`,
+               `Agregaste <b>${e.nombre}</b> al carrito`,
             showConfirmButton: false,
             timer: 3000
          })
@@ -300,13 +310,106 @@ console.log(filtroPreciosAsc())
 const filtroPreciosDes = () => arrayIndum.sort((a, b) => b.precio - a.precio)
 console.log(filtroPreciosDes())
 
-
 const filtrito = document.getElementById("filtrito");
 filtrito.addEventListener(`change`, (e) => {
    let valorOption = e.target.value;
    if (valorOption == "ascendente") {
+      indumProductos.innerHTML = ""
       console.log(filtroPreciosAsc())
+      arrayIndum.forEach((e => {
+
+         let divCard = document.createElement("div")
+
+         divCard.innerHTML = `
+      <div class="card carta" style="width: 18rem;">
+      <img src="${e.img}" class="card-img-top img-css" alt="${e.img}">
+    <div class="card-body">
+      <h5 class="card-title nombreProd">${e.nombre}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Precio: $${e.precio}</li>
+      <li class="list-group-item">
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+      <option selected>Elegí tu talle</option>
+      <option value="1">${e.talles[0]}</option>
+      <option value="2">${e.talles[1]}</option>
+      <option value="3">${e.talles[2]}</option>
+      <option value="4">${e.talles[3]}</option>
+      </select></li>
+    <div class="card-body d-flex justify-content-center">
+    <input type="button" class="btn" value="Agregar al carrito" id="agregar${e.id}"></a>
+    </div>
+   </div>
+      `
+         indumProductos.append(divCard)
+         const btnAgregar = document.getElementById(`agregar${e.id}`)
+         btnAgregar.addEventListener(`click`, () => {
+            agregarAlCarrito(e.id)
+            Swal.fire({
+               position: 'bottom-end',
+               showCancelButton: false,
+               showClass: {
+                  popup: 'animate__animated animate__fadeInDown'
+               },
+               hideClass: {
+                  popup: 'animate__animated animate__fadeOutUp'
+               },
+               icon: 'success',
+               html:
+                  `Agregaste <b>${e.nombre}</b> al carrito`,
+               showConfirmButton: false,
+               timer: 3000
+            })
+         })
+      }))
    } else if (valorOption == "descendente") {
+      indumProductos.innerHTML = ""
       console.log(filtroPreciosDes())
+      arrayIndum.forEach((e => {
+
+         let divCard = document.createElement("div")
+
+         divCard.innerHTML = `
+      <div class="card carta" style="width: 18rem;">
+      <img src="${e.img}" class="card-img-top img-css" alt="${e.img}">
+    <div class="card-body">
+      <h5 class="card-title nombreProd">${e.nombre}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Precio: $${e.precio}</li>
+      <li class="list-group-item">
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+      <option selected>Elegí tu talle</option>
+      <option value="1">${e.talles[0]}</option>
+      <option value="2">${e.talles[1]}</option>
+      <option value="3">${e.talles[2]}</option>
+      <option value="4">${e.talles[3]}</option>
+      </select></li>
+    <div class="card-body d-flex justify-content-center">
+    <input type="button" class="btn" value="Agregar al carrito" id="agregar${e.id}"></a>
+    </div>
+   </div>
+      `
+         indumProductos.append(divCard)
+         const btnAgregar = document.getElementById(`agregar${e.id}`)
+         btnAgregar.addEventListener(`click`, () => {
+            agregarAlCarrito(e.id)
+            Swal.fire({
+               position: 'bottom-end',
+               showCancelButton: false,
+               showClass: {
+                  popup: 'animate__animated animate__fadeInDown'
+               },
+               hideClass: {
+                  popup: 'animate__animated animate__fadeOutUp'
+               },
+               icon: 'success',
+               html:
+                  `Agregaste <b>${e.nombre}</b> al carrito`,
+               showConfirmButton: false,
+               timer: 3000
+            })
+         })
+      }))
    }
 })
