@@ -1,54 +1,17 @@
-//stock disponible constructor para desarrollarlo 
-class Indumentaria {
-   constructor(id, nombre, img, precio, talles, categoria) {
-      this.id = id;
-      this.nombre = nombre;
-      this.img = img;
-      this.precio = parseFloat(precio);
-      this.talles = talles;
-      this.categoria = categoria;
-      this.stock = 25;
-      this.cantidad = 1;
-   }
-   restaStock() {
-      this.stock = this.stock - this.cantidad;
-   }
-   sumarIva() {
-      return this.precio * 1.21;
-   }
-   precioSugerido() {
-      return this.precio * 1.21 * 1.25;
-   }
-}
-
-const camperaDeJean = new Indumentaria(1, "Campera de jean", `./img/camperajean.png`, 15000, ["S", "M", "L", "XL"], "camperas");
-const camperaCuero = new Indumentaria(2, "Campera de cuero", `./img/images.jpg`, 25000, ["S", "M", "L", "XL"], "camperas");
-const pantalonJean = new Indumentaria(3, "Pantalon de jean", `./img/pantalonjean.jpg`, 10516, ["38", "40", "42", "44"], "pantalones");
-const pantalonJoggerMom = new Indumentaria(4, "Pantalon Jogger MOM", `./img/patanlonjoggermom.jpg`, 8200, ["38", "40", "42", "44"], "pantalones");
-const remeraDark = new Indumentaria(5, "Remera Dark Oversize", `./img/remeradark.jpg`, 7500, ["S", "M", "L", "XL"], "remeras");
-const remeraWhite = new Indumentaria(6, "Remera White Oversize", `./img/remerawhite.jpg`, 7500, ["S", "M", "L", "XL"], "remeras");
-const buzoOversize = new Indumentaria(7, "Buzo oversize", `./img/buzooversize.jpg`, 8400, ["S", "M", "L", "XL"], "buzos");
-const buzoCanguro = new Indumentaria(8, "Buzo Canguro", `./img/buzocanguro.jpg`, 8800, ["S", "M", "L", "XL"], "buzos");
-
-const arrayIndum = [
-   camperaDeJean,
-   camperaCuero,
-   buzoOversize,
-   buzoCanguro,
-   pantalonJean,
-   pantalonJoggerMom,
-   remeraDark,
-   remeraWhite,
-];
-
-
 const indumProductos = document.getElementById("indumProductos")
 const carritoContenedor = document.getElementById("carrito-contain")
 const precioTotal = document.getElementById("precioTotal")
 const contadorCarrito = document.getElementById("contadorCarrito")
+let arrayIndum = [];
+
+fetch("./indumentaria.json") 
+    .then(res => res.json())
+    .then(data => {
+         arrayIndum = data;
+         renderizar()
+    });
 
 // recorremos el array y creamos una card por cada producto
-
 const renderizar = () => {
    arrayIndum.forEach((e => {
       let divCard = document.createElement("div")
@@ -99,7 +62,6 @@ const renderizar = () => {
       })
    }))
 }
-renderizar();
 
 // creamos un array vacio para el carrito
 let carrito = [];
@@ -228,7 +190,7 @@ formBusqueda.addEventListener("submit", (e) => {
 
 const filtrarCategorias = (categoria) => {
    indumProductos.innerHTML = ""
-   const catEncontrada = arrayIndum.filter((prod) => prod.categoria.toLowerCase() === categoria);
+   const catEncontrada = arrayIndum.filter((prod) => prod.categoria === categoria);
    console.log(catEncontrada);
 
    catEncontrada.forEach((e => {
