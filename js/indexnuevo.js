@@ -2,9 +2,10 @@ const indumProductos = document.getElementById("indumProductos")
 const carritoContenedor = document.getElementById("carrito-contain")
 const precioTotal = document.getElementById("precioTotal")
 const contadorCarrito = document.getElementById("contadorCarrito")
+const finalizarCompra = document.getElementById("finalizarCompra")
 let arrayIndum = [];
 
-fetch("./indumentaria.json") 
+fetch("./js/indumentaria.json") 
     .then(res => res.json())
     .then(data => {
          arrayIndum = data;
@@ -375,3 +376,18 @@ filtrito.addEventListener(`change`, (e) => {
       }))
    }
 })
+
+const finalCompra = () => {
+carrito.forEach((prod) => {
+   const div = document.createElement(`div`)
+   div.className = (`prodFinalCompra`)
+   div.innerHTML = `
+   <img src="${prod.img}">
+   <p>${prod.nombre}</p>
+   <p>Precio: $${prod.precio}</p>
+   <p>Cantidad: ${prod.cantidad}</p>
+   <button value="X" onclick = "eliminarDelCarrito (${prod.id})"><i class="bi bi-trash"></i></button>
+   `
+   finalizarCompra.appendChild(div)
+})
+}
