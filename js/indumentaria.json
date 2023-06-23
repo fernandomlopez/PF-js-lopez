@@ -1,10 +1,8 @@
-[
-   {"id": 1, "nombre":"Campera de jean","img":"./img/camperajean.png","precio":15000,"talles":["S", "M", "L", "XL"],"categoria":"camperas"},
+[  {"id": 1, "nombre":"Campera de jean","img":"./img/camperajean.png","precio":15000,"talles":["S", "M", "L", "XL"],"categoria":"camperas"},
    {"id": 2, "nombre":"Campera de cuero","img":"./img/images.jpg","precio":25000,"talles":["S", "M", "L", "XL"],"categoria":"camperas"},
    {"id": 3, "nombre":"Pantalon de jean","img":"./img/pantalonjean.jpg","precio":10516,"talles":["38", "40", "42", "44"],"categoria":"pantalones"},
    {"id": 4, "nombre":"Pantalon Jogger MOM","img":"./img/patanlonjoggermom.jpg","precio":8200,"talles":["38", "40", "42", "44"],"categoria":"pantalones"},
    {"id": 5, "nombre":"Remera Dark Oversize","img":"./img/remeradark.jpg","precio":7500,"talles":["S", "M", "L", "XL"],"categoria":"remeras"},
    {"id": 6, "nombre":"Remera White Oversize","img":"./img/remerawhite.jpg","precio":7500,"talles":["S", "M", "L", "XL"],"categoria":"remeras"},
    {"id": 7, "nombre":"Buzo oversize","img":"./img/buzooversize.jpg","precio":8400,"talles":["S", "M", "L", "XL"],"categoria":"buzos"},
-   {"id": 8, "nombre":"Buzo Canguro","img":"./img/buzocanguro.jpg","precio":8800,"talles":["S", "M", "L", "XL"],"categoria":"buzos"}
-]
+   {"id": 8, "nombre":"Buzo Canguro","img":"./img/buzocanguro.jpg","precio":8800,"talles":["S", "M", "L", "XL"],"categoria":"buzos"}]

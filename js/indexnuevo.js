@@ -63,70 +63,6 @@ const renderizar = () => {
       })
    }))
 }
-
-// creamos un array vacio para el carrito
-let carrito = [];
-
-
-
-//local storage del carrito
-document.addEventListener(`DOMContentLoaded`, () => {
-   if (localStorage.getItem(`carrito`)) {
-      carrito = JSON.parse(localStorage.getItem(`carrito`))
-      actCarrito()
-   }
-})
-
-//funcion para agregar al carrito
-
-const agregarAlCarrito = (indumId) => {
-   const item = arrayIndum.find((indum) => indum.id === indumId)
-   const repeat = carrito.some((indum) => indum.id === indumId)
-   if (repeat) {
-      const index = carrito.findIndex((indum) => indum.id === indumId)
-      carrito[index].cantidad++
-   } else {
-      const newItem = {...item, cantidad: 1} 
-      carrito.push(newItem)
-   }
-   actCarrito()
-}
-
-//funcion para eliminar del carrito 
-
-const eliminarDelCarrito = (indumId) => {
-   const item = carrito.find((indum) => indum.id === indumId)
-   const indice = carrito.indexOf(item)
-   carrito.splice(indice, 1)
-   actCarrito()
-}
-
-//funcion para actualizar carrito 
-
-const actCarrito = () => {
-
-   carritoContenedor.innerHTML = ""
-
-   carrito.forEach((prod) => {
-      const div = document.createElement(`div`)
-      div.className = (`prodEnCarrito`)
-      div.innerHTML = `
-      <p>${prod.nombre}</p>
-      <p>Precio: $${prod.precio}</p>
-      <p>Cantidad: ${prod.cantidad}</p>
-      <button value="X" onclick = "eliminarDelCarrito (${prod.id})"><i class="bi bi-trash"></i></button>
-      `
-
-      carritoContenedor.appendChild(div)
-
-      localStorage.setItem(`carrito`, JSON.stringify(carrito))
-   })
-   precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0)
-   contadorCarrito.innerText = carrito.length
-}
-
-
-
 const prodBuscado = (e) => {
    e.preventDefault()
    indumProductos.innerHTML = ""
@@ -269,9 +205,7 @@ home.addEventListener(`click`, () => {
 
 //filtro para ordenar los precios en forma ascendente 
 const filtroPreciosAsc = () => arrayIndum.sort((a, b) => a.precio - b.precio)
-console.log(filtroPreciosAsc())
 const filtroPreciosDes = () => arrayIndum.sort((a, b) => b.precio - a.precio)
-console.log(filtroPreciosDes())
 
 const filtrito = document.getElementById("filtrito");
 filtrito.addEventListener(`change`, (e) => {
@@ -376,18 +310,3 @@ filtrito.addEventListener(`change`, (e) => {
       }))
    }
 })
-
-const finalCompra = () => {
-carrito.forEach((prod) => {
-   const div = document.createElement(`div`)
-   div.className = (`prodFinalCompra`)
-   div.innerHTML = `
-   <img src="${prod.img}">
-   <p>${prod.nombre}</p>
-   <p>Precio: $${prod.precio}</p>
-   <p>Cantidad: ${prod.cantidad}</p>
-   <button value="X" onclick = "eliminarDelCarrito (${prod.id})"><i class="bi bi-trash"></i></button>
-   `
-   finalizarCompra.appendChild(div)
-})
-}
