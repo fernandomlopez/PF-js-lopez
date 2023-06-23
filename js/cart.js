@@ -1,81 +1,22 @@
-const finalizarCompra = document.getElementById("finalizarCompra")
-const carritoContenedor = document.getElementById("carrito-contain")
+const carrito = JSON.parse(localStorage.getItem('carrito'));
+console.log(carrito)
 
-fetch("../js/indumentaria.json") 
-    .then(res => res.json())
-    .then(data => {
-         arrayIndum = data;
-    });
-
-    let carrito = [];
-
-
-    //local storage del carrito
-document.addEventListener(`DOMContentLoaded`, () => {
-  if (localStorage.getItem(`carrito`)) {
-     carrito = JSON.parse(localStorage.getItem(`carrito`))
-     actCarrito()
-  }
-})
-
-const agregarAlCarrito = (indumId) => {
-      const item = arrayIndum.find((indum) => indum.id === indumId)
-      const repeat = carrito.some((indum) => indum.id === indumId)
-      if (repeat) {
-         const index = carrito.findIndex((indum) => indum.id === indumId)
-         carrito[index].cantidad++
-      } else {
-         const newItem = {...item, cantidad: 1} 
-         carrito.push(newItem)
-      }
-      actCarrito()
-   }
-
-    const eliminarDelCarrito = (indumId) => {
-      const item = carrito.find((indum) => indum.id === indumId)
-      const indice = carrito.indexOf(item)
-      carrito.splice(indice, 1)
-      actCarrito()
-   }
-   
-   const actCarrito = () => {
-
-    carritoContenedor.innerHTML = " ";
- 
-    carrito.forEach((prod) => {
-       const div = document.createElement(`div`)
-       div.className = (`prodEnCarrito`)
-       div.innerHTML = `
-       <p>${prod.nombre}</p>
-       <p>Precio: $${prod.precio}</p>
-       <p>Cantidad: ${prod.cantidad}</p>
-       <button value="X" onclick = "eliminarDelCarrito (${prod.id})"><i class="bi bi-trash"></i></button>
-       `
- 
-       carritoContenedor.appendChild(div)
- 
-       localStorage.setItem(`carrito`, JSON.stringify(carrito))
-    })
-    precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0)
-    contadorCarrito.innerText = carrito.length
- }
 
 const finalCompra = () => {
-  carrito.forEach((prod) => {
-     const div = document.createElement("div")
-     div.className = (`prodFinalCompra`)
-     div.innerHTML = `
-     <img src="${prod.img}>"
-     <p>${prod.nombre}</p>
-     <p>Precio: $${prod.precio}</p>
-     <p>Cantidad: ${prod.cantidad}</p>
-     <button value="X" onclick = "eliminarDelCarrito (${prod.id})"><i class="bi bi-trash"></i></button>
-     `
-     finalizarCompra.appendChild(div)
-  })
-  }
-  finalCompra()
-
+	carrito.forEach((prod) => {
+		const div = document.createElement("div");
+		div.className = `prodFinalCompra`;
+		div.innerHTML = `
+      <img src="../img/${prod.img}>"
+      <p>${prod.nombre}</p>
+      <p>Precio: $${prod.precio}</p>
+      <p>Cantidad: ${prod.cantidad}</p>
+      <button value="X" onclick = "eliminarDelCarrito (${prod.id})"><i class="bi bi-trash"></i></button>
+      `;
+		finalizarCompra.appendChild(div);
+	});
+};
+finalCompra();
   // primero pedir monto total a calcular en cuotas 
 //let montoTotal = 0
 //Nos aseguramos que sea un valor correcto y posible a calcular
