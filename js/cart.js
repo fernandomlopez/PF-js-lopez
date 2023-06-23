@@ -7,7 +7,7 @@ const finalCompra = () => {
 		const div = document.createElement("div");
 		div.className = `prodFinalCompra`;
 		div.innerHTML = `
-      <img src="../img/${prod.img}>"
+      <img src="../${prod.img}">
       <p>${prod.nombre}</p>
       <p>Precio: $${prod.precio}</p>
       <p>Cantidad: ${prod.cantidad}</p>

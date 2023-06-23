@@ -20,7 +20,7 @@ const renderizar = () => {
 
 		divCard.innerHTML = `
      <div class="card carta" style="width: 18rem;">
-     <img src="${e.img}" class="card-img-top img-css" alt="${e.img}">
+     <img src="./img/${e.img}" class="card-img-top img-css" alt="${e.nombre}">
    <div class="card-body">
      <h5 class="card-title nombreProd">${e.nombre}</h5>
    </div>
@@ -78,7 +78,7 @@ const prodBuscado = (e) => {
 
 		divCard.innerHTML = `
       <div class="card carta" style="width: 18rem;">
-      <img src="${e.img}" class="card-img-top img-css" alt="${e.img}">
+      <img src="./img/${e.img}" class="card-img-top img-css" alt="${e.nombre}">
     <div class="card-body">
       <h5 class="card-title nombreProd">${e.nombre}</h5>
     </div>
@@ -132,7 +132,7 @@ const filtrarCategorias = (categoria) => {
 
 		divCard.innerHTML = `
    <div class="card carta" style="width: 18rem;">
-   <img src="${e.img}" class="card-img-top img-css" alt="${e.img}">
+   <img src="/img/${e.img}" class="card-img-top img-css" alt="${e.nombre}">
  <div class="card-body">
    <h5 class="card-title nombreProd">${e.nombre}</h5>
  </div>
@@ -212,7 +212,7 @@ filtrito.addEventListener(`change`, (e) => {
 
 			divCard.innerHTML = `
       <div class="card carta" style="width: 18rem;">
-      <img src="${e.img}" class="card-img-top img-css" alt="${e.img}">
+      <img src="/img/${e.img}" class="card-img-top img-css" alt="${e.img}">
     <div class="card-body">
       <h5 class="card-title nombreProd">${e.nombre}</h5>
     </div>
@@ -259,7 +259,7 @@ filtrito.addEventListener(`change`, (e) => {
 
 			divCard.innerHTML = `
       <div class="card carta" style="width: 18rem;">
-      <img src="./img/${e.img}" class="card-img-top img-css" alt="${e.img}">
+      <img src="./img/${e.img}" class="card-img-top img-css" alt="${e.nombre}">
     <div class="card-body">
       <h5 class="card-title nombreProd">${e.nombre}</h5>
     </div>
@@ -347,19 +347,3 @@ const actCarrito = () => {
 	precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0);
 	contadorCarrito.innerText = carrito.length;
 };
-
-const finalCompra = () => {
-	carrito.forEach((prod) => {
-		const div = document.createElement("div");
-		div.className = `prodFinalCompra`;
-		div.innerHTML = `
-      <img src="${prod.img}>"
-      <p>${prod.nombre}</p>
-      <p>Precio: $${prod.precio}</p>
-      <p>Cantidad: ${prod.cantidad}</p>
-      <button value="X" onclick = "eliminarDelCarrito (${prod.id})"><i class="bi bi-trash"></i></button>
-      `;
-		finalizarCompra.appendChild(div);
-	});
-};
-finalCompra();
