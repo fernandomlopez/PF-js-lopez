@@ -7,12 +7,18 @@ const finalCompra = () => {
 		const div = document.createElement("div");
 		div.className = `prodFinalCompra`;
 		div.innerHTML = `
-      <img src="../${prod.img}">
+<div class="containProdFin">
+    <div class="card card-body cartaFin">
+    <li class="list-group-item listaProd">
+      <img src="../img/${prod.img}" class="card-img-top" alt="..." style="width: 5rem;">
       <p>${prod.nombre}</p>
-      <p>Precio: $${prod.precio}</p>
-      <p>Cantidad: ${prod.cantidad}</p>
-      <button value="X" onclick = "eliminarDelCarrito (${prod.id})"><i class="bi bi-trash"></i></button>
-      `;
+      <p> $${prod.precio}</p>
+      <p>X: ${prod.cantidad}</p>
+      <button value="X" class="btnElimFinal" onclick = "eliminarDelCarrito (${prod.id})"><i class="bi bi-trash"></i></button>
+      </li>  
+    </div>
+</div>
+    `;
 		finalizarCompra.appendChild(div);
 	});
 };
