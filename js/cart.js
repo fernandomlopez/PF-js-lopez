@@ -1,5 +1,6 @@
 const carrito = JSON.parse(localStorage.getItem('carrito'));
 console.log(carrito)
+const precioPagar = document.getElementById("precioPagar");
 
 
 const finalCompra = () => {
@@ -21,8 +22,10 @@ const finalCompra = () => {
     `;
 		finalizarCompra.appendChild(div);
 	});
+  precioPagar.innerText = carrito.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0);
 };
 finalCompra();
+
   // primero pedir monto total a calcular en cuotas 
 //let montoTotal = 0
 //Nos aseguramos que sea un valor correcto y posible a calcular
@@ -64,7 +67,7 @@ finalCompra();
 //function calcularCuotas(){
  // let cuota = montoTotal/cantidadCuotas;
   //for(let i=0; i < cantidadCuotas; i++){
-   // if(cantidadCuotas != 1 && cantidadCuotas != 6 && cantidadCuotas != 12){
+   // if(cantidadCuotas != 1 && cantidadCuotas != 3 && cantidadCuotas != 6){
     //cuota = (montoTotal/cantidadCuotas)* tasaInteres;
   //}
   //alert("Tu monto a pagar por mes $" + cuota.toFixed()+ "");

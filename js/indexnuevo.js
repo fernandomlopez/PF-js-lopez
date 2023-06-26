@@ -36,7 +36,7 @@ const renderizar = () => {
      </select></li>
    </ul>
    <div class="card-body d-flex justify-content-center">
-   <input type="button" class="btn" value="Agregar al carrito" id="agregar${e.id}"></a>
+   <input type="button" class="btn btn-outline-primary" value="Agregar al carrito" id="agregar${e.id}"></a>
    </div>
  </div>
      `;
@@ -47,7 +47,7 @@ const renderizar = () => {
 		btnAgregar.addEventListener(`click`, () => {
 			agregarAlCarrito(e.id);
 			Swal.fire({
-				position: "bottom-end",
+				position: "center",
 				showCancelButton: false,
 				showClass: {
 					popup: "animate_animated animate_fadeInDown",
@@ -102,7 +102,7 @@ const prodBuscado = (e) => {
 		btnAgregar.addEventListener(`click`, () => {
 			agregarAlCarrito(e.id);
 			Swal.fire({
-				position: "bottom-end",
+				position: "center",
 				showCancelButton: false,
 				showClass: {
 					popup: "animate_animated animate_fadeInDown",
@@ -156,7 +156,7 @@ const filtrarCategorias = (categoria) => {
 		btnAgregar.addEventListener(`click`, () => {
 			agregarAlCarrito(e.id);
 			Swal.fire({
-				position: "bottom-end",
+				position: "center",
 				showCancelButton: false,
 				showClass: {
 					popup: "animate_animated animate_fadeInDown",
@@ -236,7 +236,7 @@ filtrito.addEventListener(`change`, (e) => {
 			btnAgregar.addEventListener(`click`, () => {
 				agregarAlCarrito(e.id);
 				Swal.fire({
-					position: "bottom-end",
+					position: "center",
 					showCancelButton: false,
 					showClass: {
 						popup: "animate_animated animate_fadeInDown",
@@ -283,7 +283,7 @@ filtrito.addEventListener(`change`, (e) => {
 			btnAgregar.addEventListener(`click`, () => {
 				agregarAlCarrito(e.id);
 				Swal.fire({
-					position: "bottom-end",
+					position: "center",
 					showCancelButton: false,
 					showClass: {
 						popup: "animate_animated animate_fadeInDown",

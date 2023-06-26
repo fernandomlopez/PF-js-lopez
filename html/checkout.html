@@ -23,9 +23,72 @@
             <h3 class="marca">Milo Indum</h3>
         </div>
     </header>
-    <div id="finalizarCompra">
-
-    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="mb-3 mt-3 col-lg-6 col-md-12">
+            <div class="mb-3 mt-3 col col-md-12">
+                <label for="exampleFormControlInput3" class="form-label">Nombre Completo</label>
+                <input type="text" class="form-control " id="exampleFormControlInput3" placeholder="Nombre y apellido">
+            </div>
+                <label for="exampleFormControlInput1" class="form-label">Datos de Contacto</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="email@ejemplo.com">
+                <div class="form-check mt-1">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Quiero recibir ofertas y novedades por email
+                    </label>    
+                </div>
+                <div class="mb-3 mt-3 col col-md-12">
+                    <label for="exampleFormControlInput2" class="form-label">Domicilio</label>
+                    <input type="text" class="form-control " id="exampleFormControlInput2" placeholder="Dirección">
+                </div>
+                <div class="mb-3 mt-3 col col-md-12">
+                    <input type="number" class="form-control " id="exampleFormControlInput3" placeholder="Código postal">
+                </div>
+                <div>
+                    <label for="tarjetaCuotas" class="form-label">Cantidad de cuotas</label>
+                    <select id="tarjetaCuotas" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>Eliga la cantidad de cuotas</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five</option>
+                      </select>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 mb-3 mt-3">
+                    <label for="numberTarjeta">Numero de la tarjeta</label>
+                    <input type="number" id="numberTarjeta" class="form-control" placeholder="4587-2541-6352-4512" aria-labelledby="passwordHelpInline">
+                    </div>
+                    <div class="col-lg-3 mb-3 mt-3">
+                    <label for="desde">Inicio</label>
+                    <input type="number" id="desde" class="form-control" placeholder="05/23" aria-labelledby="passwordHelpInline">
+                    </div>
+                    <div class="col-lg-3 mb-3 mt-3">
+                    <label for="hasta">Vencimiento</label>
+                    <input type="number" id="hasta" class="form-control" placeholder="09/30" aria-labelledby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-between">
+                    <div class="col-lg-3 mb-3 mt-3">
+                        <label for="cvv">Codigo</label>
+                        <input type="number" id="cvv" class="form-control" placeholder="987" aria-labelledby="passwordHelpInline">
+                    </div>
+                    <div class="col-lg-4 mb-5 mt-5">
+                        <button type="button" class="btn btn-outline-primary">Finalizar Compra</button>
+                    </div>
+                </div>
+            </div>
+                <div class="col-lg-6 col-md-12" id="finalizarCompra">
+                </div>
+                <div class="row justify-content-end m-0">
+                    <div class="col-lg-6 col-md-12  border-top">
+                        <p class="pricePagar">Total: $<span id="precioPagar">0</span></p>
+                    </div>
+                </div>
+            </div>
+       </div>
     <footer>
         <div class="social-icons-container">
                 <a href="https://www.facebook.com/" class="social-icon"><i class="bi bi-facebook"></i></a>

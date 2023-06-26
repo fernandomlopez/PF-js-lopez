@@ -26,7 +26,6 @@ body {
 
 .hero {
     height: 100vh;
-    margin: 0px;
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -103,7 +102,7 @@ p {
 }
 
 .btn {
-    width: 90%;
+    width: 100%;
     border: none;
     outline: 0;
     color: white;
@@ -112,18 +111,16 @@ p {
     cursor: pointer;
 }
 
-.btn:hover {
-    color: white;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(29, 28, 28);
-    box-shadow: 2px 2px 4px black;
+.prodFinalCompra {
+    margin: 0px;
+    padding: 0px;
+    width: 95%;
+    
 }
 
-.prodFinalCompra {
-    margin: 10px;
-    padding: 2px;
-    width: 40%;
+.cartaFin {
+    margin: 3%;
+    width: 100% !important;
 }
 
 .listaProd {
@@ -138,7 +135,18 @@ p {
 
 .btnElimFinal {
     height: 20% !important;
-    color: rgba(0, 0, 0);
+}
+
+.pricePagar {
+    padding-left: 25px;
+    display: flex !important;
+    justify-content: space-between !important;
+    width: 93%;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    font-size: 1.4em;
+    align-self: center;
 }
 
 
@@ -227,7 +235,6 @@ footer {
     }
 
     .prodFinalCompra {
-        width: 100%;
         margin: 0px;
         padding: 0px;
         align-items: center;
@@ -254,6 +261,5 @@ footer {
         height: 20% !important;
         color: rgba(0, 0, 0);
     }
-    
     
 }
