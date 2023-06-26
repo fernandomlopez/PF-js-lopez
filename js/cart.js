@@ -15,7 +15,6 @@ const finalCompra = () => {
       <p>${prod.nombre}</p>
       <p> $${prod.precio}</p>
       <p>X: ${prod.cantidad}</p>
-      <button value="X" class="btnElimFinal" onclick = "eliminarDelCarrito (${prod.id})"><i class="bi bi-trash"></i></button>
       </li>  
     </div>
 </div>
