@@ -27,6 +27,8 @@
     </header>
     <div class="container-fluid">
         <div class="row">
+            <div class="col-lg-6 col-md-12" id="finalizarCompra">
+            </div>
             <div class="mb-3 mt-3 col-lg-6 col-md-12">
                 <div class="mb-3 mt-3 col col-md-12">
                     <label for="exampleFormControlInput3" class="form-label">Nombre Completo</label>
@@ -87,23 +89,19 @@
                             <option value="24">24 cuotas con interes</option>
                         </select>
                     </div>
-                    <div class="row justify-content-end mt-3">
-                        <div class="col-lg-6 col-md-12  border-top">
+                    <div class="row justify-content-end mt-4">
+                        <div class="col-lg-6 col-md-12 border-top">
                             <p class="pricePagar">De $<span id="precioPagarTarjeta">0</span></p>
-                        </div>
-                    </div>
-                    <div class="row justify-content-end mt-3">
-                        <div class="col-lg-6 col-md-12 mb-5 mt-5">
-                            <a type="button" class="btn btn-outline-primary" id="compraFinalizada">Finalizar Compra</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-12" id="finalizarCompra">
-            </div>
-            <div class="row justify-content-end m-0">
+            <div class="row justify-content-between m-0">
                 <div class="col-lg-6 col-md-12  border-top">
                     <p class="pricePagar">Total: $<span id="precioPagar">0</span></p>
+                </div>
+                <div class="col-lg-2 col-md-12 mt-1">
+                    <a type="button" class="btn btn-outline-primary" id="compraFinalizada">Finalizar Compra</a>
                 </div>
             </div>
         </div>
