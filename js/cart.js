@@ -1,7 +1,9 @@
 const carrito = JSON.parse(localStorage.getItem('carrito'));
 console.log(carrito)
 const precioPagar = document.getElementById("precioPagar");
-
+const tarjetaCuotas = document.getElementById("tarjetaCuotas");
+const precioPagarTarjeta = document.getElementById("precioPagarTarjeta");
+const compraFinalizada = document.getElementById("compraFinalizada");
 
 const finalCompra = () => {
 	carrito.forEach((prod) => {
@@ -25,52 +27,43 @@ const finalCompra = () => {
 };
 finalCompra();
 
-  // primero pedir monto total a calcular en cuotas 
-//let montoTotal = 0
-//Nos aseguramos que sea un valor correcto y posible a calcular
-//while (true) {
-//  montoTotal = parseInt(prompt("Ingrese el monto total"));
- // if (!isNaN(montoTotal) && montoTotal != null && montoTotal != " ") {
-   // break;
-  //} else {
- //   alert("Monto ingresado incorrectamente, vuelva a intentarlo por favor");
-    //continue;
-  //}
-//}
-
-// Mostramos el monto total ingresado por el usuario en pantalla 
-
-//alert("Monto total ingresado a calcular es: $" + montoTotal + "")
-//console.log("Monto total ingresado a calcular es: $" + montoTotal + "")
-
-// Le recordamos de sus posibilidades de financiacion en cuotas sin interes
-
-//alert("Recuerde que tiene 6 y 12 cuotas sin interes")
-
-// le pedimos que elija la cantidad de cuotas y nos aseguramos que sea dentro de los valores posibles
-
-//let cantidadCuotas = 0
-//while (true) {
-  //cantidadCuotas = parseInt(prompt("Elija la cantidad de cuotas"));
-  //if (!isNaN(cantidadCuotas) && cantidadCuotas != null && cantidadCuotas != " ") {
-    //break;
-  //} else {
- //   alert("Vuelva a intentarlo por favor");
-  //  continue;
-  //}
-//}
 //TASA DE INTERES 
-//let tasaInteres = 1.05;
+let tasaInteres = 1.08;
 
-//funcion para calcular cuotas que muestra en pantalla solo el monto a pagar por mes
-//function calcularCuotas(){
- // let cuota = montoTotal/cantidadCuotas;
-  //for(let i=0; i < cantidadCuotas; i++){
-   // if(cantidadCuotas != 1 && cantidadCuotas != 3 && cantidadCuotas != 6){
-    //cuota = (montoTotal/cantidadCuotas)* tasaInteres;
-  //}
-  //alert("Tu monto a pagar por mes $" + cuota.toFixed()+ "");
-  //break;
- // }
-//}
-//calcularCuotas();
+let montoTotal = precioPagar.innerHTML;
+
+tarjetaCuotas.addEventListener(`change`, (e) => {
+
+let cantidadCuotas = e.target.value;
+
+let cuota = montoTotal/cantidadCuotas;
+
+for(let i = 0; i < cantidadCuotas; i++){
+
+  if (cantidadCuotas != 3 && cantidadCuotas != 6){
+
+  cuota = (montoTotal/cantidadCuotas) * tasaInteres;
+
+}
+
+precioPagarTarjeta.innerHTML = cuota.toFixed();
+break
+}
+})
+
+compraFinalizada.addEventListener(`click`, () =>{
+    
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'Gracias por tu compra ',
+    text: 'En breve nos estaremos comunicando via mail con los datos de envio y detalles de tu compra.',
+    footer: '<p class="marca">Milo indum</p>',
+    showConfirmButton: false,
+    timer: 5000
+  })
+  setTimeout(() => {
+    window.location.href = "../index.html";
+  }, "5050");
+  
+})

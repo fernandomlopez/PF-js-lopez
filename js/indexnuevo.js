@@ -293,6 +293,7 @@ filtrito.addEventListener(`change`, (e) => {
 					},
 					icon: "success",
 					html: `Agregaste <b>${e.nombre}</b> al carrito`,
+					footer: '<p class="marca">Milo indum</p>',
 					showConfirmButton: false,
 					timer: 3000,
 				});
