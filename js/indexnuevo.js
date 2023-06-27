@@ -132,7 +132,7 @@ const filtrarCategorias = (categoria) => {
 
 		divCard.innerHTML = `
    <div class="card carta" style="width: 18rem;">
-   <img src="/img/${e.img}" class="card-img-top img-css" alt="${e.nombre}">
+   <img src="./img/${e.img}" class="card-img-top img-css" alt="${e.nombre}">
  <div class="card-body">
    <h5 class="card-title nombreProd">${e.nombre}</h5>
  </div>
@@ -212,7 +212,7 @@ filtrito.addEventListener(`change`, (e) => {
 
 			divCard.innerHTML = `
       <div class="card carta" style="width: 18rem;">
-      <img src="/img/${e.img}" class="card-img-top img-css" alt="${e.img}">
+      <img src="./img/${e.img}" class="card-img-top img-css" alt="${e.img}">
     <div class="card-body">
       <h5 class="card-title nombreProd">${e.nombre}</h5>
     </div>
