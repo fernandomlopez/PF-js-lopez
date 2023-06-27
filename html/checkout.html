@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-        <!-- fuente -->
-        <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-        <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-      />
-        <link rel="stylesheet" href="../css/style.css">
-        <title>Milo Indum</title>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <!-- fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Milo Indum</title>
+</head>
+
 <body>
     <header>
         <div class="container-fluid banner-filtros">
@@ -26,47 +28,56 @@
     <div class="container-fluid">
         <div class="row">
             <div class="mb-3 mt-3 col-lg-6 col-md-12">
-            <div class="mb-3 mt-3 col col-md-12">
-                <label for="exampleFormControlInput3" class="form-label">Nombre Completo</label>
-                <input type="text" class="form-control " id="exampleFormControlInput3" placeholder="Nombre y apellido">
-            </div>
+                <div class="mb-3 mt-3 col col-md-12">
+                    <label for="exampleFormControlInput3" class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control " id="exampleFormControlInput3" value=""
+                        placeholder="Nombre y apellido">
+                </div>
                 <label for="exampleFormControlInput1" class="form-label">Datos de Contacto</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="email@ejemplo.com">
+                <input type="email" class="form-control" id="exampleFormControlInput1" value=""
+                    placeholder="email@ejemplo.com">
                 <div class="form-check mt-1">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                     <label class="form-check-label" for="flexCheckChecked">
                         Quiero recibir ofertas y novedades por email
-                    </label>    
+                    </label>
                 </div>
                 <div class="mb-3 mt-3 col col-md-12">
                     <label for="exampleFormControlInput2" class="form-label">Domicilio</label>
-                    <input type="text" class="form-control " id="exampleFormControlInput2" placeholder="Dirección">
+                    <input type="text" class="form-control" value="" id="exampleFormControlInput2"
+                        placeholder="Dirección">
                 </div>
                 <div class="mb-3 mt-3 col col-md-12">
-                    <input type="number" class="form-control " id="exampleFormControlInput3" placeholder="Código postal">
+                    <input type="number" class="form-control " id="exampleFormControlInput3" value=""
+                        placeholder="Código postal">
                 </div>
                 <div class="row">
                     <div class="col-lg-6 mb-3 mt-3">
-                    <label for="numberTarjeta">Numero de la tarjeta</label>
-                    <input type="number" id="numberTarjeta" class="form-control" placeholder="4587-2541-6352-4512" aria-labelledby="passwordHelpInline">
+                        <label for="numberTarjeta">Numero de la tarjeta</label>
+                        <input type="number" id="numberTarjeta" class="form-control" placeholder="4587-2541-6352-4512"
+                            value="" aria-labelledby="passwordHelpInline">
                     </div>
                     <div class="col-lg-3 mb-3 mt-3">
-                    <label for="desde">Inicio</label>
-                    <input type="number" id="desde" class="form-control" placeholder="05/23" aria-labelledby="passwordHelpInline">
+                        <label for="desde">Inicio</label>
+                        <input type="number" id="desde" value="" class="form-control" placeholder="05/23"
+                            aria-labelledby="passwordHelpInline">
                     </div>
                     <div class="col-lg-3 mb-3 mt-3">
-                    <label for="hasta">Vencimiento</label>
-                    <input type="number" id="hasta" class="form-control" placeholder="09/30" aria-labelledby="passwordHelpInline">
+                        <label for="hasta">Vencimiento</label>
+                        <input type="number" id="hasta" class="form-control" value="" placeholder="09/30"
+                            aria-labelledby="passwordHelpInline">
                     </div>
                 </div>
                 <div class="row d-flex justify-content-between">
                     <div class="col-lg-3 mb-3 mt-3">
                         <label for="cvv">Codigo</label>
-                        <input type="number" id="cvv" class="form-control" placeholder="987" aria-labelledby="passwordHelpInline">
+                        <input type="number" id="cvv" class="form-control" value="" placeholder="987"
+                            aria-labelledby="passwordHelpInline">
                     </div>
                     <div>
                         <label for="tarjetaCuotas" class="form-label">Cantidad de cuotas</label>
-                        <select id="tarjetaCuotas" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <select id="tarjetaCuotas" class="form-select form-select-sm"
+                            aria-label=".form-select-sm example">
                             <option selected>Elija la cantidad de cuotas</option>
                             <option value="2">2 cuotas con interes</option>
                             <option value="3">3 cuotas sin interes</option>
@@ -74,7 +85,7 @@
                             <option value="12">12 cuotas con interes</option>
                             <option value="18">18 cuotas con interes</option>
                             <option value="24">24 cuotas con interes</option>
-                          </select>
+                        </select>
                     </div>
                     <div class="row justify-content-end mt-3">
                         <div class="col-lg-6 col-md-12  border-top">
@@ -88,31 +99,32 @@
                     </div>
                 </div>
             </div>
-                <div class="col-lg-6 col-md-12" id="finalizarCompra">
-                </div>
-                <div class="row justify-content-end m-0">
-                    <div class="col-lg-6 col-md-12  border-top">
-                        <p class="pricePagar">Total: $<span id="precioPagar">0</span></p>
-                    </div>
+            <div class="col-lg-6 col-md-12" id="finalizarCompra">
+            </div>
+            <div class="row justify-content-end m-0">
+                <div class="col-lg-6 col-md-12  border-top">
+                    <p class="pricePagar">Total: $<span id="precioPagar">0</span></p>
                 </div>
             </div>
-       </div>
+        </div>
+    </div>
     <footer>
         <div class="social-icons-container">
-                <a href="https://www.facebook.com/" class="social-icon"><i class="bi bi-facebook"></i></a>
-                <a href="https://web.whatsapp.com/" class="social-icon"><i class="bi bi-whatsapp"></i></a>
-                <a href="https://www.instagram.com/" class="social-icon"><i class="bi bi-instagram"></i></a>
-            </div>
+            <a href="https://www.facebook.com/" class="social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="https://web.whatsapp.com/" class="social-icon"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://www.instagram.com/" class="social-icon"><i class="bi bi-instagram"></i></a>
+        </div>
         <ul class="footer-menu-container">
-                <li class="menu-item">Legal</li>
-                <li class="menu-item">Cookies</li>
-                <li class="menu-item">Privacy</li>
-                <li class="menu-item">Shipping</li>
-                <li class="menu-item">Refounds</li>
-            </ul>
+            <li class="menu-item">Legal</li>
+            <li class="menu-item">Cookies</li>
+            <li class="menu-item">Privacy</li>
+            <li class="menu-item">Shipping</li>
+            <li class="menu-item">Refounds</li>
+        </ul>
         <span class="copyright">&copy;2023, MILO indumentaria, All rights reserved.</span>
-      </footer>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/cart.js"></script>
 </body>
+
 </html>
